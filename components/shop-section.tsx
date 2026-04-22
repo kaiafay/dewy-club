@@ -100,22 +100,22 @@ export function ShopSection() {
               </div>
 
               {/* Card content */}
-              <div className="p-5 flex flex-col flex-1 gap-2">
-                <h3 className="font-serif font-bold text-lg text-[#1A1A1A] leading-tight">
+              <div className="p-3 md:p-5 flex flex-col flex-1 gap-1 md:gap-2">
+                <h3 className="font-serif font-bold text-sm md:text-lg text-[#1A1A1A] leading-tight">
                   {product.name}
                 </h3>
-                <p className="font-sans text-sm text-[#1A1A1A]/60 leading-relaxed flex-1">
+                <p className="font-sans text-xs md:text-sm text-[#1A1A1A]/60 leading-relaxed flex-1">
                   {product.desc}
                 </p>
-                <div className="flex items-center justify-between mt-3">
-                  <span className="font-serif font-bold text-xl text-[#1A1A1A]">
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between mt-2 md:mt-3 gap-2">
+                  <span className="font-serif font-bold text-base md:text-xl text-[#1A1A1A]">
                     {product.price}
                   </span>
                   <a
                     href={product.checkoutUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group/btn inline-flex items-center gap-1.5 rounded-full px-4 py-2 font-sans font-semibold text-sm text-[#1A1A1A] transition-shadow duration-200 hover:shadow-md"
+                    className="group/btn inline-flex w-full items-center justify-center gap-1 rounded-full px-3 py-2 font-sans text-xs font-semibold text-[#1A1A1A] transition-shadow duration-200 hover:shadow-md md:w-auto md:gap-1.5 md:px-4 md:text-sm"
                     style={{ backgroundColor: "#F4C6D4" }}
                   >
                     Buy Now

@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import { useEffect, useRef, useState } from "react"
+import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 
 const products = [
   "Morning Meeting",
@@ -10,38 +10,38 @@ const products = [
   "5pm Slump",
   "Night Shift",
   "Sunday Reset",
-]
+];
 
 export function HeroSection() {
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [isFlipping, setIsFlipping] = useState(false)
-  const [navVisible, setNavVisible] = useState(true)
-  const lastScrollY = useRef(0)
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isFlipping, setIsFlipping] = useState(false);
+  const [navVisible, setNavVisible] = useState(true);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIsFlipping(true)
+      setIsFlipping(true);
       setTimeout(() => {
-        setCurrentIndex((prev) => (prev + 1) % products.length)
-        setIsFlipping(false)
-      }, 250)
-    }, 3000)
-    return () => clearInterval(interval)
-  }, [])
+        setCurrentIndex((prev) => (prev + 1) % products.length);
+        setIsFlipping(false);
+      }, 250);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY
+      const currentScrollY = window.scrollY;
       if (currentScrollY < lastScrollY.current) {
-        setNavVisible(true)
+        setNavVisible(true);
       } else if (currentScrollY > lastScrollY.current) {
-        setNavVisible(false)
+        setNavVisible(false);
       }
-      lastScrollY.current = currentScrollY
-    }
-    window.addEventListener("scroll", handleScroll, { passive: true })
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+      lastScrollY.current = currentScrollY;
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <section className="relative min-h-screen flex flex-col">
@@ -55,9 +55,24 @@ export function HeroSection() {
           Dewy Club
         </span>
         <div className="flex items-center gap-4">
-          <a href="#shop" className="font-sans text-sm whitespace-nowrap text-[#1A1A1A]/70 hover:text-[#1A1A1A] transition-colors">Shop</a>
-          <a href="#why" className="font-sans text-sm whitespace-nowrap text-[#1A1A1A]/70 hover:text-[#1A1A1A] transition-colors">About</a>
-          <a href="#ritual" className="font-sans text-sm whitespace-nowrap text-[#1A1A1A]/70 hover:text-[#1A1A1A] transition-colors">Skin Quiz</a>
+          <a
+            href="#shop"
+            className="font-sans text-sm whitespace-nowrap text-[#1A1A1A]/70 hover:text-[#1A1A1A] transition-colors"
+          >
+            Shop
+          </a>
+          <a
+            href="#why"
+            className="font-sans text-sm whitespace-nowrap text-[#1A1A1A]/70 hover:text-[#1A1A1A] transition-colors"
+          >
+            About
+          </a>
+          <a
+            href="#ritual"
+            className="font-sans text-sm whitespace-nowrap text-[#1A1A1A]/70 hover:text-[#1A1A1A] transition-colors"
+          >
+            Skin Quiz
+          </a>
         </div>
       </nav>
 
@@ -71,8 +86,10 @@ export function HeroSection() {
           <p className="font-sans text-sm font-medium tracking-widest text-[#1A1A1A]/50 uppercase mb-4">
             Skincare, but make it ✦
           </p>
-          <h1 className="font-serif font-extrabold text-7xl md:text-8xl lg:text-9xl leading-none tracking-tight text-[#1A1A1A] mb-8">
-            Dewy<br />Club.
+          <h1 className="font-serif font-extrabold text-5xl sm:text-6xl lg:text-8xl xl:text-9xl leading-none tracking-tight text-[#1A1A1A] mb-8">
+            Dewy
+            <br />
+            Club.
           </h1>
 
           {/* Slot machine */}
@@ -109,7 +126,9 @@ export function HeroSection() {
             >
               Shop the Drop ✦
             </a>
-            <span className="font-sans text-sm text-[#1A1A1A]/50">No 47-step routine required.</span>
+            <span className="font-sans text-sm text-[#1A1A1A]/50">
+              No 47-step routine required.
+            </span>
           </div>
         </div>
 
@@ -125,5 +144,5 @@ export function HeroSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

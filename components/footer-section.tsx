@@ -63,7 +63,9 @@ export function FooterSection() {
                 className="flex-shrink-0 rounded-full px-4 py-2.5 font-sans font-semibold text-sm text-[#1A1A1A] transition-all duration-200 hover:scale-105 hover:shadow-lg"
                 style={{ backgroundColor: "#F4C6D4" }}
               >
-                Join the Club ✦
+                <span className="hidden lg:inline">Join the Club</span>
+                <span className="lg:hidden">Join</span>
+                {" ✦"}
               </button>
             </div>
           </div>

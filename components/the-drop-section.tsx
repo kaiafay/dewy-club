@@ -16,7 +16,7 @@ export function TheDropSection() {
         </div>
 
         {/* Right — copy */}
-        <div className="flex flex-col justify-center px-10 md:px-16 py-16 md:py-20">
+        <div className="flex flex-col justify-center px-6 md:px-16 py-16 md:py-20">
           <p className="font-sans text-sm font-medium tracking-widest text-[#1A1A1A]/50 uppercase mb-5">
             Featured Drop ✦
           </p>
@@ -26,7 +26,7 @@ export function TheDropSection() {
           <p className="font-sans text-base text-[#1A1A1A]/70 leading-relaxed mb-10 max-w-md">
             Night Shift is your overnight reset. Retinol, barrier support, and a texture so good you&apos;ll actually look forward to bedtime.
           </p>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center gap-4">
             <a
               href="https://buy.stripe.com/test_28EcN41DG3iifuzdSk8Vi04"
               target="_blank"
