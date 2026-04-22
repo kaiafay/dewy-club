@@ -8,6 +8,8 @@ const products = [
     image: "/images/products/morning-meeting.webp",
     alt: "Vitamin C serum bottle on a clean white surface",
     overlay: "#FFF0F250",
+    checkoutUrl:
+      "https://buy.stripe.com/test_fZufZg0zC1aa1DJ8y08Vi00",
   },
   {
     name: "Soft Launch",
@@ -15,6 +17,8 @@ const products = [
     price: "$28",
     image: "/images/products/soft-launch.webp",
     alt: "Light moisturizer in a minimalist jar",
+    checkoutUrl:
+      "https://buy.stripe.com/test_7sY4gycik8CC96bcOg8Vi01",
   },
   {
     name: "The Dewy Drop",
@@ -22,6 +26,8 @@ const products = [
     price: "$22",
     image: "/images/products/dewy-drop.webp",
     alt: "Hydrating face mist spray bottle",
+    checkoutUrl:
+      "https://buy.stripe.com/test_eVqaEW4PS7yycineWo8Vi02",
   },
   {
     name: "5pm Slump",
@@ -31,6 +37,8 @@ const products = [
     alt: "Under-eye patches laid out on a clean surface",
     overlay: "#FFF0F270",
     filter: "contrast(1.2) brightness(0.95)",
+    checkoutUrl:
+      "https://buy.stripe.com/test_4gM5kC6Y09GGeqv5lO8Vi03",
   },
   {
     name: "Night Shift",
@@ -39,6 +47,8 @@ const products = [
     image: "/images/products/night-shift.webp",
     alt: "Retinol cream jar against a soft background",
     filter: "contrast(0.85)",
+    checkoutUrl:
+      "https://buy.stripe.com/test_28EcN41DG3iifuzdSk8Vi04",
   },
   {
     name: "Sunday Reset",
@@ -46,6 +56,8 @@ const products = [
     price: "$30",
     image: "/images/products/sunday-reset.webp",
     alt: "Exfoliating face mask product on a white surface",
+    checkoutUrl:
+      "https://buy.stripe.com/test_00wdR8gyA5qq1DJ5lO8Vi05",
   },
 ];
 
@@ -100,7 +112,9 @@ export function ShopSection() {
                     {product.price}
                   </span>
                   <a
-                    href="#"
+                    href={product.checkoutUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="group/btn inline-flex items-center gap-1.5 rounded-full px-4 py-2 font-sans font-semibold text-sm text-[#1A1A1A] transition-shadow duration-200 hover:shadow-md"
                     style={{ backgroundColor: "#F4C6D4" }}
                   >

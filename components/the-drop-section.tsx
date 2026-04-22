@@ -28,7 +28,9 @@ export function TheDropSection() {
           </p>
           <div className="flex items-center gap-4">
             <a
-              href="#"
+              href="https://buy.stripe.com/test_28EcN41DG3iifuzdSk8Vi04"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center rounded-full px-8 py-4 font-sans font-semibold text-base text-[#1A1A1A] transition-all duration-200 hover:scale-105 hover:shadow-lg"
               style={{ backgroundColor: "#F4C6D4", color: "#1A1A1A" }}
             >
