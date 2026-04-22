@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 const products = [
   "Morning Meeting",
@@ -15,6 +15,8 @@ const products = [
 export function HeroSection() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isFlipping, setIsFlipping] = useState(false)
+  const [navVisible, setNavVisible] = useState(true)
+  const lastScrollY = useRef(0)
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -27,17 +29,40 @@ export function HeroSection() {
     return () => clearInterval(interval)
   }, [])
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
+      if (currentScrollY < lastScrollY.current) {
+        setNavVisible(true)
+      } else if (currentScrollY > lastScrollY.current) {
+        setNavVisible(false)
+      }
+      lastScrollY.current = currentScrollY
+    }
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
   return (
     <section className="relative min-h-screen flex flex-col">
-      {/* Nav */}
-      <nav className="relative z-10 flex items-center justify-between px-8 py-6">
-        <span className="font-serif font-bold text-xl text-[#1A1A1A] tracking-tight">Dewy Club</span>
-        <div className="flex items-center gap-8">
-          <a href="#shop" className="font-sans text-sm text-[#1A1A1A]/70 hover:text-[#1A1A1A] transition-colors">Shop</a>
-          <a href="#why" className="font-sans text-sm text-[#1A1A1A]/70 hover:text-[#1A1A1A] transition-colors">About</a>
-          <a href="#ritual" className="font-sans text-sm text-[#1A1A1A]/70 hover:text-[#1A1A1A] transition-colors">Skin Quiz</a>
+      {/* Fixed nav */}
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-6 bg-white/95 backdrop-blur-sm transition-transform duration-300 ${
+          navVisible ? "translate-y-0" : "-translate-y-full"
+        }`}
+      >
+        <span className="font-serif font-bold text-xl text-[#1A1A1A] tracking-tight leading-tight">
+          Dewy Club
+        </span>
+        <div className="flex items-center gap-4">
+          <a href="#shop" className="font-sans text-sm whitespace-nowrap text-[#1A1A1A]/70 hover:text-[#1A1A1A] transition-colors">Shop</a>
+          <a href="#why" className="font-sans text-sm whitespace-nowrap text-[#1A1A1A]/70 hover:text-[#1A1A1A] transition-colors">About</a>
+          <a href="#ritual" className="font-sans text-sm whitespace-nowrap text-[#1A1A1A]/70 hover:text-[#1A1A1A] transition-colors">Skin Quiz</a>
         </div>
       </nav>
+
+      {/* Spacer to prevent content from sliding under fixed nav */}
+      <div className="h-20" aria-hidden="true" />
 
       {/* Hero content */}
       <div className="flex-1 grid md:grid-cols-2 gap-0">
