@@ -11,6 +11,7 @@ export function TheDropSection() {
             alt="Night Shift overnight retinol cream product photography"
             fill
             className="object-cover"
+            style={{ filter: "contrast(0.85)" }}
           />
         </div>
 
@@ -29,7 +30,7 @@ export function TheDropSection() {
             <a
               href="#"
               className="inline-flex items-center rounded-full px-8 py-4 font-sans font-semibold text-base text-[#1A1A1A] transition-all duration-200 hover:scale-105 hover:shadow-lg"
-              style={{ backgroundColor: "#1A1A1A", color: "#F9E4B7" }}
+              style={{ backgroundColor: "#F4C6D4", color: "#1A1A1A" }}
             >
               Add to Routine ✦
             </a>

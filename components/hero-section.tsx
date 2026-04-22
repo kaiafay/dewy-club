@@ -23,7 +23,7 @@ export function HeroSection() {
         setCurrentIndex((prev) => (prev + 1) % products.length)
         setIsFlipping(false)
       }, 250)
-    }, 2000)
+    }, 3000)
     return () => clearInterval(interval)
   }, [])
 
@@ -56,15 +56,15 @@ export function HeroSection() {
               Currently obsessed with:
             </span>
             <div
-              className="relative overflow-hidden rounded-full px-4 py-1.5"
+              className="relative overflow-hidden rounded-full px-4 py-1.5 w-44 flex justify-center"
               style={{ backgroundColor: "#F9E4B7" }}
             >
               <div
                 className="font-sans font-semibold text-base text-[#1A1A1A] transition-all duration-200"
                 style={{
-                  transform: isFlipping ? "translateY(-100%)" : "translateY(0)",
+                  transform: isFlipping ? "translateY(-5px)" : "translateY(0)",
                   opacity: isFlipping ? 0 : 1,
-                  transition: "transform 0.2s ease-in-out, opacity 0.15s ease-in-out",
+                  transition: "transform 0.2s ease-out, opacity 0.18s ease-out",
                 }}
               >
                 {products[currentIndex]}

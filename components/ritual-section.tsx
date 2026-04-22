@@ -20,7 +20,7 @@ export function RitualSection() {
           <a
             href="#"
             className="inline-flex items-center rounded-full px-10 py-5 font-sans font-semibold text-lg text-[#1A1A1A] transition-all duration-200 hover:scale-105 hover:shadow-xl"
-            style={{ backgroundColor: "#1A1A1A", color: "#C9B8E8" }}
+            style={{ backgroundColor: "#F4C6D4", color: "#1A1A1A" }}
           >
             Take the Quiz ✦
           </a>

@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image from "next/image";
 
 const products = [
   {
@@ -7,6 +7,7 @@ const products = [
     price: "$34",
     image: "/images/products/morning-meeting.webp",
     alt: "Vitamin C serum bottle on a clean white surface",
+    overlay: "#FFF0F250",
   },
   {
     name: "Soft Launch",
@@ -28,6 +29,8 @@ const products = [
     price: "$18",
     image: "/images/products/5pm-slump.webp",
     alt: "Under-eye patches laid out on a clean surface",
+    overlay: "#FFF0F270",
+    filter: "contrast(1.2) brightness(0.95)",
   },
   {
     name: "Night Shift",
@@ -35,6 +38,7 @@ const products = [
     price: "$38",
     image: "/images/products/night-shift.webp",
     alt: "Retinol cream jar against a soft background",
+    filter: "contrast(0.85)",
   },
   {
     name: "Sunday Reset",
@@ -43,7 +47,7 @@ const products = [
     image: "/images/products/sunday-reset.webp",
     alt: "Exfoliating face mask product on a white surface",
   },
-]
+];
 
 export function ShopSection() {
   return (
@@ -71,25 +75,39 @@ export function ShopSection() {
                   alt={product.alt}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  style={
+                    product.filter ? { filter: product.filter } : undefined
+                  }
                 />
-                <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  style={{ backgroundColor: "#F4C6D420" }}
-                />
+                {product.overlay && (
+                  <div
+                    className="absolute inset-0"
+                    style={{ backgroundColor: product.overlay }}
+                  />
+                )}
               </div>
 
               {/* Card content */}
               <div className="p-5 flex flex-col flex-1 gap-2">
-                <h3 className="font-serif font-bold text-lg text-[#1A1A1A] leading-tight">{product.name}</h3>
-                <p className="font-sans text-sm text-[#1A1A1A]/60 leading-relaxed flex-1">{product.desc}</p>
+                <h3 className="font-serif font-bold text-lg text-[#1A1A1A] leading-tight">
+                  {product.name}
+                </h3>
+                <p className="font-sans text-sm text-[#1A1A1A]/60 leading-relaxed flex-1">
+                  {product.desc}
+                </p>
                 <div className="flex items-center justify-between mt-3">
-                  <span className="font-serif font-bold text-xl text-[#1A1A1A]">{product.price}</span>
+                  <span className="font-serif font-bold text-xl text-[#1A1A1A]">
+                    {product.price}
+                  </span>
                   <a
                     href="#"
-                    className="inline-flex items-center rounded-full px-4 py-2 font-sans font-semibold text-sm text-[#1A1A1A] transition-all duration-200 hover:scale-105 hover:shadow-md"
+                    className="group/btn inline-flex items-center gap-1.5 rounded-full px-4 py-2 font-sans font-semibold text-sm text-[#1A1A1A] transition-shadow duration-200 hover:shadow-md"
                     style={{ backgroundColor: "#F4C6D4" }}
                   >
-                    Buy Now ✦
+                    Buy Now
+                    <span className="inline-block transition-transform duration-300 group-hover/btn:rotate-45">
+                      ✦
+                    </span>
                   </a>
                 </div>
               </div>
@@ -98,5 +116,5 @@ export function ShopSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
