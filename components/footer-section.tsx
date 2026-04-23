@@ -60,12 +60,14 @@ export function FooterSection() {
               <button
                 type="button"
                 onClick={() => setEmail("")}
-                className="flex-shrink-0 rounded-full px-4 py-2.5 font-sans font-semibold text-sm text-[#1A1A1A] transition-all duration-200 hover:scale-105 hover:shadow-lg"
+                className="group/btn inline-flex flex-shrink-0 items-center gap-1 rounded-full px-4 py-2.5 font-sans font-semibold text-sm text-[#1A1A1A] transition-shadow duration-200 hover:shadow-md"
                 style={{ backgroundColor: "#F4C6D4" }}
               >
                 <span className="hidden lg:inline">Join the Club</span>
                 <span className="lg:hidden">Join</span>
-                {" ✦"}
+                <span className="inline-block transition-transform duration-300 group-hover/btn:rotate-45">
+                  ✦
+                </span>
               </button>
             </div>
           </div>

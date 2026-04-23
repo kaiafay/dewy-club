@@ -12,8 +12,7 @@ const products = [
     alt: "Vitamin C serum bottle on a clean white surface",
     overlay: "#FFF0F250",
     ingredients: ["Vitamin C", "Niacinamide", "Hyaluronic Acid"],
-    checkoutUrl:
-      "https://buy.stripe.com/test_fZufZg0zC1aa1DJ8y08Vi00",
+    checkoutUrl: "https://buy.stripe.com/test_fZufZg0zC1aa1DJ8y08Vi00",
   },
   {
     name: "Soft Launch",
@@ -22,8 +21,7 @@ const products = [
     image: "/images/products/soft-launch.webp",
     alt: "Light moisturizer in a minimalist jar",
     ingredients: ["Ceramide Complex", "Squalane", "Peptides"],
-    checkoutUrl:
-      "https://buy.stripe.com/test_7sY4gycik8CC96bcOg8Vi01",
+    checkoutUrl: "https://buy.stripe.com/test_7sY4gycik8CC96bcOg8Vi01",
   },
   {
     name: "The Dewy Drop",
@@ -32,8 +30,7 @@ const products = [
     image: "/images/products/dewy-drop.webp",
     alt: "Hydrating face mist spray bottle",
     ingredients: ["Glycerin", "Aloe Vera", "Rose Water"],
-    checkoutUrl:
-      "https://buy.stripe.com/test_eVqaEW4PS7yycineWo8Vi02",
+    checkoutUrl: "https://buy.stripe.com/test_eVqaEW4PS7yycineWo8Vi02",
   },
   {
     name: "5pm Slump",
@@ -44,8 +41,7 @@ const products = [
     overlay: "#FFF0F270",
     filter: "contrast(1.2) brightness(0.95)",
     ingredients: ["Collagen", "Caffeine", "Retinol"],
-    checkoutUrl:
-      "https://buy.stripe.com/test_4gM5kC6Y09GGeqv5lO8Vi03",
+    checkoutUrl: "https://buy.stripe.com/test_4gM5kC6Y09GGeqv5lO8Vi03",
   },
   {
     name: "Night Shift",
@@ -55,8 +51,7 @@ const products = [
     alt: "Retinol cream jar against a soft background",
     filter: "contrast(0.85)",
     ingredients: ["Retinol 0.3%", "Bakuchiol", "Peptide Complex"],
-    checkoutUrl:
-      "https://buy.stripe.com/test_28EcN41DG3iifuzdSk8Vi04",
+    checkoutUrl: "https://buy.stripe.com/test_28EcN41DG3iifuzdSk8Vi04",
   },
   {
     name: "Sunday Reset",
@@ -65,8 +60,7 @@ const products = [
     image: "/images/products/sunday-reset.webp",
     alt: "Exfoliating face mask product on a white surface",
     ingredients: ["AHA/BHA Blend", "Kaolin Clay", "Willow Bark"],
-    checkoutUrl:
-      "https://buy.stripe.com/test_00wdR8gyA5qq1DJ5lO8Vi05",
+    checkoutUrl: "https://buy.stripe.com/test_00wdR8gyA5qq1DJ5lO8Vi05",
   },
 ];
 
@@ -76,14 +70,17 @@ export function ShopSection() {
   );
 
   return (
-    <section id="shop" className="py-24 px-6 md:px-16 bg-[#F9F7F4]">
+    <section
+      id="shop"
+      className="overflow-hidden py-24 px-6 md:px-16 bg-[#F9F7F4]"
+    >
       <div className="max-w-6xl mx-auto">
         <div className="mb-14">
           <p className="font-sans text-sm font-medium tracking-widest text-[#1A1A1A]/50 uppercase mb-3">
             The lineup ✦
           </p>
-          <h2 className="font-serif font-extrabold text-5xl md:text-6xl text-[#1A1A1A] text-balance">
-            The Full Lineup.
+          <h2 className="font-serif font-extrabold text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-[#1A1A1A] text-balance">
+            Six products, one routine.
           </h2>
         </div>
 

@@ -44,7 +44,7 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex flex-col">
+    <section className="relative min-h-[100dvh] flex flex-col">
       {/* Fixed nav */}
       <nav
         className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-6 bg-white/95 backdrop-blur-sm transition-transform duration-300 ${
@@ -84,7 +84,7 @@ export function HeroSection() {
         {/* Left — copy */}
         <div className="flex flex-col justify-center px-8 md:px-16 py-16 md:py-0">
           <p className="font-sans text-sm font-medium tracking-widest text-[#1A1A1A]/50 uppercase mb-4">
-            Skincare, but make it ✦
+            Skincare, simplified ✦
           </p>
           <h1 className="font-serif font-extrabold text-5xl sm:text-6xl lg:text-8xl xl:text-9xl leading-none tracking-tight text-[#1A1A1A] mb-8">
             Dewy
@@ -93,16 +93,19 @@ export function HeroSection() {
           </h1>
 
           {/* Slot machine */}
-          <div className="flex items-center gap-3 mb-10 flex-wrap">
-            <span className="font-sans text-base text-[#1A1A1A]/60 whitespace-nowrap">
+          <div className="flex items-center gap-3 mb-10">
+            <span className="font-sans text-base text-[#1A1A1A]/60 whitespace-nowrap hidden lg:inline">
               Currently obsessed with:
             </span>
+            <span className="font-sans text-base text-[#1A1A1A]/60 whitespace-nowrap lg:hidden">
+              Obsessed with:
+            </span>
             <div
-              className="relative overflow-hidden rounded-full px-4 py-1.5 w-44 flex justify-center"
+              className="relative overflow-hidden rounded-full px-4 py-1.5 w-28 sm:w-36 md:w-44 flex justify-center whitespace-nowrap"
               style={{ backgroundColor: "#F9E4B7" }}
             >
               <div
-                className="font-sans font-semibold text-base text-[#1A1A1A] transition-all duration-200"
+                className="font-sans font-semibold text-xs sm:text-sm md:text-base text-[#1A1A1A] transition-all duration-200"
                 style={{
                   transform: isFlipping ? "translateY(-5px)" : "translateY(0)",
                   opacity: isFlipping ? 0 : 1,
@@ -121,19 +124,19 @@ export function HeroSection() {
           <div className="flex items-center gap-4 flex-wrap">
             <a
               href="#shop"
-              className="inline-flex items-center gap-2 rounded-full px-8 py-4 font-sans font-semibold text-[#1A1A1A] text-base transition-all duration-200 hover:scale-105 hover:shadow-lg"
+              className="inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm md:px-8 md:py-4 md:text-base font-sans font-semibold text-[#1A1A1A] transition-all duration-200 hover:scale-105 hover:shadow-lg"
               style={{ backgroundColor: "#F4C6D4" }}
             >
               Shop the Drop ✦
             </a>
             <span className="font-sans text-sm text-[#1A1A1A]/50">
-              No 47-step routine required.
+              Fewer steps, better skin.
             </span>
           </div>
         </div>
 
         {/* Right — image */}
-        <div className="relative min-h-[50vh] md:min-h-screen overflow-hidden">
+        <div className="relative min-h-[50vh] md:min-h-[100dvh] overflow-hidden hidden md:block">
           <Image
             src="/images/hero-photo.webp"
             alt="Bright airy skincare flatlay on a light background"

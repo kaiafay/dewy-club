@@ -2,7 +2,11 @@ import Image from "next/image"
 
 export function TheDropSection() {
   return (
-    <section id="the-drop" className="py-0" style={{ backgroundColor: "#F9E4B7" }}>
+    <section
+      id="the-drop"
+      className="overflow-hidden py-0"
+      style={{ backgroundColor: "#F9E4B7" }}
+    >
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 min-h-[600px]">
         {/* Left — image */}
         <div className="relative overflow-hidden min-h-[400px] md:min-h-[600px] rounded-none">
@@ -20,7 +24,7 @@ export function TheDropSection() {
           <p className="font-sans text-sm font-medium tracking-widest text-[#1A1A1A]/50 uppercase mb-5">
             Featured Drop ✦
           </p>
-          <h2 className="font-serif font-extrabold text-5xl md:text-6xl text-[#1A1A1A] leading-tight mb-6 text-balance">
+          <h2 className="font-serif font-extrabold text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-[#1A1A1A] leading-tight mb-6 text-balance">
             While you sleep,<br />it works.
           </h2>
           <p className="font-sans text-base text-[#1A1A1A]/70 leading-relaxed mb-10 max-w-md">
@@ -31,7 +35,7 @@ export function TheDropSection() {
               href="https://buy.stripe.com/test_28EcN41DG3iifuzdSk8Vi04"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center rounded-full px-8 py-4 font-sans font-semibold text-base text-[#1A1A1A] transition-all duration-200 hover:scale-105 hover:shadow-lg"
+              className="inline-flex items-center rounded-full px-5 py-3 text-sm md:px-8 md:py-4 md:text-base font-sans font-semibold text-[#1A1A1A] transition-all duration-200 hover:scale-105 hover:shadow-lg"
               style={{ backgroundColor: "#F4C6D4", color: "#1A1A1A" }}
             >
               Add to Routine ✦
