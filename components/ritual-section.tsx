@@ -1,4 +1,4 @@
-export function RitualSection() {
+export function RitualSection({ onOpenQuiz }: { onOpenQuiz: () => void }) {
   return (
     <section
       id="ritual"
@@ -16,25 +16,14 @@ export function RitualSection() {
           Take our 60-second skin quiz and we&apos;ll build your routine for you.
         </p>
 
-        <div className="relative inline-flex flex-col items-center gap-4">
-          <a
-            href="#"
-            className="inline-flex items-center rounded-full px-5 py-3 text-sm md:px-10 md:py-5 md:text-lg font-sans font-semibold text-[#1A1A1A] transition-all duration-200 hover:scale-105 hover:shadow-xl"
-            style={{ backgroundColor: "#F4C6D4", color: "#1A1A1A" }}
-          >
-            Take the Quiz ✦
-          </a>
-
-          {/* Coming Soon badge */}
-          <div className="flex items-center gap-2">
-            <span
-              className="inline-flex items-center rounded-full px-4 py-1.5 font-sans font-bold text-xs tracking-widest text-[#1A1A1A] uppercase"
-              style={{ backgroundColor: "#F9E4B7" }}
-            >
-              Coming Soon
-            </span>
-          </div>
-        </div>
+        <button
+          type="button"
+          onClick={onOpenQuiz}
+          className="inline-flex items-center rounded-full px-5 py-3 text-sm md:px-10 md:py-5 md:text-lg font-sans font-semibold text-[#1A1A1A] transition-all duration-200 hover:scale-105 hover:shadow-xl"
+          style={{ backgroundColor: "#F4C6D4", color: "#1A1A1A" }}
+        >
+          Take the Quiz ✦
+        </button>
       </div>
     </section>
   )

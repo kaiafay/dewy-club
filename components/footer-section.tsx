@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 
-export function FooterSection() {
+export function FooterSection({ onOpenQuiz }: { onOpenQuiz: () => void }) {
   const [email, setEmail] = useState("")
 
   return (
@@ -35,12 +35,13 @@ export function FooterSection() {
             >
               About
             </a>
-            <a
-              href="#ritual"
-              className="font-sans text-sm text-white/60 hover:text-white transition-colors"
+            <button
+              type="button"
+              onClick={onOpenQuiz}
+              className="font-sans text-sm text-white/60 hover:text-white transition-colors text-left md:text-center"
             >
               Skin Quiz
-            </a>
+            </button>
           </nav>
 
           {/* Newsletter */}

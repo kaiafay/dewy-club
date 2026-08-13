@@ -12,7 +12,7 @@ const products = [
   "Sunday Reset",
 ];
 
-export function HeroSection() {
+export function HeroSection({ onOpenQuiz }: { onOpenQuiz: () => void }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFlipping, setIsFlipping] = useState(false);
   const [navVisible, setNavVisible] = useState(true);
@@ -67,12 +67,13 @@ export function HeroSection() {
           >
             About
           </a>
-          <a
-            href="#ritual"
+          <button
+            type="button"
+            onClick={onOpenQuiz}
             className="font-sans text-sm whitespace-nowrap text-[#1A1A1A]/70 hover:text-[#1A1A1A] transition-colors"
           >
             Skin Quiz
-          </a>
+          </button>
         </div>
       </nav>
 
